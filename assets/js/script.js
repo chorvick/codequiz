@@ -1,56 +1,103 @@
 /// js will go here
 var data = [
     {
-        question: "a  question",
+        ask: "a  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "b  question",
+        ask: "b  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "c  question",
+        ask: "c  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "d  question",
+        ask: "d  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "e  question",
+        ask: "e  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "f  question",
+        ask: "f  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "g  question",
+        ask: "g  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "h  question",
+        ask: "h  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "i  question",
+        ask: "i  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
     {
-        question: "j  question",
+        ask: "j  question",
         answers: ["ans1", "ans2", "ans3", "ans4"],
         rightAnswer: "ans2"
     },
 ];
+var qindex = 0;
+var score = 0;
+
+document.getElementById("start").onclick = function () {
+    window.alert("Hi there!");  //TEST FOR NOW ONLY 
+}
+
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#start");
+var data = document.querySelector("#data");
+var container = document.querySelector("#container");
+var secondsLeft = 20; ////SETTING LOW NOW FOR TESTING
+var holdInterval = 0;
+
+
+timer.addEventListener("click", function () {
+
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            currentTime.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+
+                currentTime.textContent = "GAME OVER";
+            }
+        }, 1000);
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //// set a timer to zero
