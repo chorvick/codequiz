@@ -54,20 +54,16 @@ var data = [
 var qindex = 0;
 var score = 0;
 
-document.getElementById("start").onclick = function () {
-    window.alert("Hi there!");  //TEST FOR NOW ONLY 
-}
-
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
-var data = document.querySelector("#data");
+var data_thing = document.querySelector("#data");
 var container = document.querySelector("#container");
 var secondsLeft = 20; ////SETTING LOW NOW FOR TESTING
 var holdInterval = 0;
 
 
 timer.addEventListener("click", function () {
-
+    showQuestion()
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
@@ -83,20 +79,17 @@ timer.addEventListener("click", function () {
 
 });
 
+function showQuestion() {
+    // Find the current index with in Data.
+    // Take all of the object parameters and display them on the page.
+    let current = data[qindex]
 
+    document.getElementById("data").textContent = current.ask
+    current.answers.forEach(answer => {
+        document.getElementById("choices").append(`<p>${answer}</p>`)
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -125,6 +118,23 @@ timer.addEventListener("click", function () {
 /// ask user for initials - test for initials use JSON to store locally
 //// display hi scores , if a button clicked clear score(s) and local storage
 /// if play again is slected start timer and roll back up top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
