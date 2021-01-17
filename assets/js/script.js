@@ -83,7 +83,7 @@ function showQuestion() {
     // Find the current index with in Data.
     // Take all of the object parameters and display them on the page.
     let current = data[qindex]
-
+    answer = "";
     document.getElementById("data").textContent = current.ask
     current.answers.forEach(answer => {
         document.getElementById("choices").append(`<p>${answer}</p>`)
