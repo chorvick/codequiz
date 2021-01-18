@@ -56,14 +56,14 @@ var score = 0;
 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
-var data_thing = document.querySelector("#data");
+var datadiv = document.querySelector("#datadiv");
 var container = document.querySelector("#container");
 var secondsLeft = 20; ////SETTING LOW NOW FOR TESTING
 var holdInterval = 0;
-
+var ulWrite = document.createElement("ul");
 
 timer.addEventListener("click", function () {
-    showQuestion()
+
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
@@ -76,20 +76,46 @@ timer.addEventListener("click", function () {
             }
         }, 1000);
     }
-
+    render(qindex);
 });
 
-function showQuestion() {
-    // Find the current index with in Data.
-    // Take all of the object parameters and display them on the page.
-    let current = data[qindex]
-    answer = "";
-    document.getElementById("data").textContent = current.ask
-    current.answers.forEach(answer => {
-        document.getElementById("choices").append(`<p>${answer}</p>`)
-    });
 
+
+
+
+datadiv.innerHTML = "";
+//   
+ulWrite.innerHTML = "";
+
+
+function render(qindex) {
+    for (var i = 0; i < data.length; i++) {
+        var userQuestion = data[qindex].ask;
+        var userChoice = data[qindex].answers;
+        datadiv.textContent = userQuestion;
+
+    }
+
+
+    userChoice.forEach(function (newitem) {
+        var item = document.createElement("li");
+        item.textContent = newitem;
+        datadiv.appendChild(ulWrite);
+        ulWrite.appendChild(item);
+        item.addEventListener("click", (compare));
+
+    })
 }
+function compare(event) {
+    ////have to see if they pick the right answer now
+}
+
+
+
+
+
+
+
 
 
 
