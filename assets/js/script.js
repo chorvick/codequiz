@@ -112,7 +112,12 @@ function compare(event) {
 
 
 
+qindex++;
+alert(qindex);
 
+if (qindex >= data.length) {
+    alert("its over");
+}
 
 
 
