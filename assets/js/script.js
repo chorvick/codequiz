@@ -58,7 +58,7 @@ var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
 var datadiv = document.querySelector("#datadiv");
 var container = document.querySelector("#container");
-var secondsLeft = 20; ////SETTING LOW NOW FOR TESTING
+var secondsLeft = 120;
 var holdInterval = 0;
 var ulWrite = document.createElement("ul");
 
@@ -79,22 +79,19 @@ timer.addEventListener("click", function () {
     render(qindex);
 });
 
-
-
-
-
-datadiv.innerHTML = "";
-//   
-ulWrite.innerHTML = "";
-
-
 function render(qindex) {
+    datadiv.innerHTML = "";
+    ulWrite.innerHTML = "";
+
+
+
     for (var i = 0; i < data.length; i++) {
         var userQuestion = data[qindex].ask;
         var userChoice = data[qindex].answers;
         datadiv.textContent = userQuestion;
 
     }
+
 
 
     userChoice.forEach(function (newitem) {
@@ -106,19 +103,44 @@ function render(qindex) {
 
     })
 }
+
+
 function compare(event) {
-    ////have to see if they pick the right answer now
+
+
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        alert("inside if commpare area");
+    }
+
+    else {
+        (element.textContent == data[dataIndex].rightAnswer); {
+            score++;
+            createDiv.textContent = "Good - The answer was " + data[dataIndex].rightAnswer;
+            alert("in else");
+        }
+
+        elseif
+        {
+            secondsLeft = secondsLeft - 10;
+            createDiv.textContent = "I'm sorry you missed that one. The answer was " + data[dataIndex].rightAnswer;
+            alert("in else if");
+
+            qindex++;
+            alert(qindex);
+
+            if (qindex >= data.length) {
+                alert("its over");
+            }
+
+        }
+
+    }
 }
-
-
-
-qindex++;
-alert(qindex);
-
-if (qindex >= data.length) {
-    alert("its over");
-}
-
 
 
 
