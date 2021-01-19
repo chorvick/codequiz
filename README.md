@@ -1,14 +1,12 @@
 
 # Code Quiz
 
+This project is a multiple choice quiz to test the users knowledge of Javascript.
+
+Below the Acceptance Criteria is a screen shot of the finished product and a
+link where you can try it out yourself !
 
 
-
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-
-Acceptance Criteria
 
 GIVEN I am taking a code quiz
 
@@ -29,3 +27,5 @@ THEN I can save my initials and my score
 
 
 ![ss1](https://user-images.githubusercontent.com/52890172/105093709-2dbb8380-5a71-11eb-908f-7ebaf1677752.png)
+
+[Click here to try the Code Quiz](https://chorvick.github.io/codequiz/index.html)
