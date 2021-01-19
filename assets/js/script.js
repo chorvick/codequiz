@@ -1,4 +1,6 @@
 /// js will go here
+
+/////define object holds questions, answers and correct answer
 var data = [
     {
         ask: "a  question",
@@ -51,17 +53,26 @@ var data = [
         rightAnswer: "ans2"
     },
 ];
+
+//initialize variables to zero start with no score , qindex 
+//counts what question the user is on
 var qindex = 0;
 var score = 0;
-
+/// need to add styling 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
 var datadiv = document.querySelector("#datadiv");
 var container = document.querySelector("#container");
+// user starts with 100 seconds 
+
 var secondsLeft = 100;
 var holdInterval = 0;
+//adds element when we need it
 var ulWrite = document.createElement("ul");
 var dataIndex = 0;
+// timer working , user gets 10 second penalty need to hide it
+// when game is over 
+/// the timer starts when they click the button
 timer.addEventListener("click", function () {
 
     if (holdInterval === 0) {
@@ -71,20 +82,24 @@ timer.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
-
+                /// alert("game over loop found")
+                alldone();
                 currentTime.textContent = "GAME OVER";
             }
         }, 1000);
     }
     render(qindex);
 });
-
+///clearing data here before pulling questions and 
+/// answers from the object
 function render(qindex) {
     datadiv.innerHTML = "";
     ulWrite.innerHTML = "";
 
 
-
+    /// by  not hard coding to ten we can add more questions later
+    /// would need to change starting timer value up
+    /// for each question added on
     for (var i = 0; i < data.length; i++) {
         var userQuestion = data[qindex].ask;
         var userChoice = data[qindex].answers;
@@ -101,7 +116,11 @@ function render(qindex) {
 
     })
 }
-
+//// compare ansewer user clicks on to real answer
+/// if ok tell them good
+/// if not tell them sorry and the right answer
+/// dock them ten seconds from the value
+///holding the time secondsLeft
 function compare(event) {
     var element = event.target;
 
@@ -118,10 +137,14 @@ function compare(event) {
 
         }
     }
+    /// count qindex up one after each user input is
+    //determined to be right or wrong
+    /// if we are at the end of the questions 
+    /// call function all done defined further down
     qindex++;
     if (qindex >= data.length) {
         alldone();
-        createDiv.textContent = "Your answered " + score + " out of ten questions correct !!";
+        createDiv.textContent = "Your answered " + score + " out of 10 questions correct !!";
 
     } else {
         render(qindex);
@@ -130,14 +153,17 @@ function compare(event) {
     datadiv.appendChild(createDiv);
 
 }
-
+/// if questions finished clear data again
 function alldone() {
     datadiv.innerHTML = "";
     currentTime.innerHTML = "";
 }
 
 
-
+if (secondsLeft >= 0) {
+    var timeleft = secondsLeft;
+    clearInterval(holdInterval);
+}
 
 
 
