@@ -10,11 +10,12 @@ clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
 });
-
+///check  pull from local storage
 var allscores = localStorage.getItem("allscores");
 allscores = JSON.parse(allscores);
 
 if (allscores != null) {
+
     for (var i = 0; i < allscores.length; i++) {
         var createli = document.createElement("li");
         createli.textContent = allscores[i].initials + " " + allscores[i].score;
@@ -22,8 +23,7 @@ if (allscores != null) {
     }
 }
 
-goBack.addEventListener("click", function () {
-    preventDefault();
+addEventListener("click", function () {
     window.location.replace("index.html");
 });
 
