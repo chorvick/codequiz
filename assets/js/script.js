@@ -1,6 +1,7 @@
 /// js will go here
 
 /////define object holds questions, answers and correct answer
+//// have to add the real questions in and take test data out 
 var data = [
     {
         ask: "a  question",
@@ -87,7 +88,7 @@ timer.addEventListener("click", function () {
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 alldone();
-                currentTime.textContent = "Time has run out !!!";
+                currentTime.textContent = "Sorry time has run out !!!";
             }
         }, 1000);
     }
@@ -226,7 +227,7 @@ function alldone() {
                 initials: initials,
                 score: timeleft
             }
-            ///          alert(finalscore);
+
             var allscores = localStorage.getItem("allscores");
             if (allscores === null) {
                 allscores = [];

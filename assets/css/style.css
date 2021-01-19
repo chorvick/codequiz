@@ -2,7 +2,7 @@
 
 #container {
   position: absolute;
-  left: 30%;
+  left: 37%;
   top: 20%;
   width: 500px;
   height: 500px;
@@ -90,7 +90,7 @@ li {
   margin-top: 20px;
   border-top: 1px solid lightgray;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1080px) {
   #container {
     font-size: 27px;
     float: left;
