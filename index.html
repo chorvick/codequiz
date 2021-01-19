@@ -2,49 +2,33 @@
 <html>
 
 <head>
-    <title>Code Quiz</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Code Quiz</title>
 </head>
 
 
 
 <body>
-    <br>
+
     <a href="hiscore.html">View High Score Table</a>
 
-    <h1>Code Quiz</h1>
-    <p>Do your best to answer the questions before time runs out.</p><br>
-    <p>Incorrect answers deduct 10 seconds from
-        the clock</p>
+
     <div id="container">
         <div id="currentTime"></div>
-        <br>
-        <br>
-        <br>
+
         <div id="datadiv">
-
-
-
-
+            <h1>Code Quiz</h1>
+            <p>Do your best to answer the questions before time runs out.</p><br>
+            <p>Incorrect answers deduct 15 seconds from
+                the clock</p>
+            <ul id="choicesul">
+            </ul>
+            <button id="start">Press to Begin</button>
         </div>
-
-
-        <ul id="choicesul">
-
-
-
-
-        </ul>
-        <button id="start">Press to Begin</button>
     </div>
-
-
-
-
-
-
 
     <script src="assets/js/script.js"></script>
 </body>

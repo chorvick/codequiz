@@ -58,6 +58,7 @@ var data = [
 //counts what question the user is on
 var qindex = 0;
 var score = 0;
+
 /// need to add styling 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
@@ -70,9 +71,12 @@ var holdInterval = 0;
 //adds element when we need it
 var ulWrite = document.createElement("ul");
 var dataIndex = 0;
-// timer working , user gets 10 second penalty need to hide it
+// timer working , user gets 15 second penalty need to hide it
 // when game is over 
 /// the timer starts when they click the button
+
+
+
 timer.addEventListener("click", function () {
 
     if (holdInterval === 0) {
@@ -131,7 +135,7 @@ function compare(event) {
             score++;
             createDiv.textContent = "Good - The answer was " + data[dataIndex].rightAnswer;
         } else {
-            secondsLeft = secondsLeft - 10;
+            secondsLeft = secondsLeft - 15;
             createDiv.textContent = "I'm sorry you missed that one. The answer was " + data[dataIndex].rightAnswer;
 
         }
@@ -172,6 +176,7 @@ datadiv.appendChild(makep);
 // add time to score for final score 
 
 if (secondsLeft >= 0) {
+   /// var timeleft = 0;
     var timeleft = secondsLeft;
     var makep2 = document.createElement("p");
     clearInterval(holdInterval);
@@ -196,7 +201,7 @@ datadiv.appendChild(input);
 
 var submit = document.createElement("button");
 submit.setAttribute("type", "submit");
-submit.setAttribute("id", "submit");
+submit.setAttribute("id", "Submit");
 submit.textContent = "Submit";
 datadiv.appendChild(submit);
 
