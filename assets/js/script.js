@@ -61,7 +61,7 @@ var container = document.querySelector("#container");
 var secondsLeft = 120;
 var holdInterval = 0;
 var ulWrite = document.createElement("ul");
-
+var dataIndex = 0;
 timer.addEventListener("click", function () {
 
     if (holdInterval === 0) {
@@ -92,8 +92,6 @@ function render(qindex) {
 
     }
 
-
-
     userChoice.forEach(function (newitem) {
         var item = document.createElement("li");
         item.textContent = newitem;
@@ -104,43 +102,35 @@ function render(qindex) {
     })
 }
 
-
 function compare(event) {
-
-
     var element = event.target;
 
     if (element.matches("li")) {
-
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
-        alert("inside if commpare area");
-    }
 
-    else {
-        (element.textContent == data[dataIndex].rightAnswer); {
+        if (element.textContent == data[dataIndex].rightAnswer) {
             score++;
             createDiv.textContent = "Good - The answer was " + data[dataIndex].rightAnswer;
-            alert("in else");
-        }
-
-        elseif
-        {
+        } else {
             secondsLeft = secondsLeft - 10;
             createDiv.textContent = "I'm sorry you missed that one. The answer was " + data[dataIndex].rightAnswer;
-            alert("in else if");
-
-            qindex++;
-            alert(qindex);
-
-            if (qindex >= data.length) {
-                alert("its over");
-            }
 
         }
-
     }
+    qindex++;
+
+
 }
+
+
+
+
+
+
+//datadiv.appendChild(createDiv);
+
+
 
 
 
