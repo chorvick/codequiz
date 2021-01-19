@@ -82,7 +82,6 @@ timer.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
-                /// alert("game over loop found")
                 alldone();
                 currentTime.textContent = "GAME OVER";
             }
@@ -158,12 +157,70 @@ function alldone() {
     datadiv.innerHTML = "";
     currentTime.innerHTML = "";
 }
+/// header
+var makeh = document.createElement("h1");
+makeh.setAttribute("id", "makeh");
+makeh.textContent = "GAME OVER";
+datadiv.appendChild(makeh);
 
+//
+//
+var makep = document.createElement("p");
+makep.setAttribute("id", "makep");
+datadiv.appendChild(makep);
+
+// add time to score for final score 
 
 if (secondsLeft >= 0) {
     var timeleft = secondsLeft;
+    var makep2 = document.createElement("p");
     clearInterval(holdInterval);
+    makep.textContent = "Your Final Score Was " + timeleft;
+    datadiv.appendChild(makep2);
+
 }
+////ask for initials for high score table
+var label = document.createElement("label");
+label.setAttribute("id", "label");
+label.textContent = "Please enter your initials ";
+datadiv.appendChild(label);
+/// get the initials
+
+var input = document.createElement("input");
+input.setAttribute("type", "text");
+input.setAttribute("id", "initials");
+input.textContent = "";
+datadiv.appendChild(input);
+
+/// user submits initials
+
+var submit = document.createElement("button");
+submit.setAttribute("type", "submit");
+submit.setAttribute("id", "submit");
+submit.textContent = "Submit";
+datadiv.appendChild(submit);
+
+submit.addEventListener("click", function () {
+    var initials = input.value;
+    var finalscore = {
+        initials: initials,
+
+        score: timeleft
+    }
+    var allscores = localStorage.getItem("allscores");
+    if (allscores === null) {
+        allscores = [];
+    } else {
+        allscores = JSON.parse(allscores);
+    }
+    allscores.push(finalscore);
+    var nextscore = JSON.stringify(allscores);
+    localStorage.setItem("allscores", nextscore);
+    window.location.replace("./highscore.html");
+});
+
+
+
 
 
 
