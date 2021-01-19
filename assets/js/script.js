@@ -183,10 +183,13 @@ function alldone() {
     // add time to score for final score 
 
     if (secondsLeft >= 0) {
-        /// var timeleft = 0;
+
         var timeleft = secondsLeft;
         var makep2 = document.createElement("p");
         clearInterval(holdInterval);
+        if (timeleft === undefined) {
+            timeleft = 0
+        }
         makep.textContent = "Your Final Score Was " + timeleft;
         datadiv.appendChild(makep2);
 
@@ -214,7 +217,7 @@ function alldone() {
 
     submit.addEventListener("click", function () {
         var initials = input.value;
-        if (initials === 0) {
+        if (initials === undefined) {
 
             alert("Please enter initials");
 
@@ -223,12 +226,15 @@ function alldone() {
                 initials: initials,
                 score: timeleft
             }
-
+            ///          alert(finalscore);
             var allscores = localStorage.getItem("allscores");
             if (allscores === null) {
                 allscores = [];
             } else {
                 allscores = JSON.parse(allscores);
+            }
+            if (finalscore.score === undefined) {
+                finalscore.score = 0;
             }
             allscores.push(finalscore);
             var nextscore = JSON.stringify(allscores);
