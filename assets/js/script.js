@@ -58,7 +58,7 @@ var data = [
 //counts what question the user is on
 var qindex = 0;
 var score = 0;
-
+var dataIndex = 0;
 /// 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
@@ -214,21 +214,27 @@ function alldone() {
 
     submit.addEventListener("click", function () {
         var initials = input.value;
-        var finalscore = {
-            initials: initials,
+        if (initials === 0) {
 
-            score: timeleft
-        }
-        var allscores = localStorage.getItem("allscores");
-        if (allscores === null) {
-            allscores = [];
+            alert("Please enter initials");
+
         } else {
-            allscores = JSON.parse(allscores);
+            var finalscore = {
+                initials: initials,
+                score: timeleft
+            }
+
+            var allscores = localStorage.getItem("allscores");
+            if (allscores === null) {
+                allscores = [];
+            } else {
+                allscores = JSON.parse(allscores);
+            }
+            allscores.push(finalscore);
+            var nextscore = JSON.stringify(allscores);
+            localStorage.setItem("allscores", nextscore);
+            window.location.replace("hiscore.html");
         }
-        allscores.push(finalscore);
-        var nextscore = JSON.stringify(allscores);
-        localStorage.setItem("allscores", nextscore);
-        window.location.replace("hiscore.html");
     });
 }
 
