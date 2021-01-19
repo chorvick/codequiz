@@ -22,9 +22,9 @@ if (allscores != null) {
     }
 }
 
-goBack.addEventListener("click", function (evt) {
+goBack.addEventListener("click", function () {
     ///evt.preventDefault();
-    window.location.replace("./index.html");
+    window.location.replace("index.html");
 });
 
 

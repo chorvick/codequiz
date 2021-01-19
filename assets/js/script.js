@@ -176,7 +176,7 @@ datadiv.appendChild(makep);
 // add time to score for final score 
 
 if (secondsLeft >= 0) {
-   /// var timeleft = 0;
+    /// var timeleft = 0;
     var timeleft = secondsLeft;
     var makep2 = document.createElement("p");
     clearInterval(holdInterval);
@@ -221,7 +221,7 @@ submit.addEventListener("click", function () {
     allscores.push(finalscore);
     var nextscore = JSON.stringify(allscores);
     localStorage.setItem("allscores", nextscore);
-    window.location.replace("./highscore.html");
+    window.location.replace("hiscore.html");
 });
 
 
