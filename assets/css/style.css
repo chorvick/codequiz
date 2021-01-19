@@ -1,7 +1,5 @@
 /**  css styles will go below **/
 
-
-
 #container {
   position: absolute;
   left: 30%;
@@ -26,15 +24,15 @@
 }
 
 #back {
-  background-color: rgb(0, 128, 128);
+  background-color: rgb(66, 118, 231);
   position: relative;
   padding: 10px;
-  font-size: 40px;
+  font-size: 25px;
   color: white;
-  top: 30%;
-  left: 55%;
+  top: 20%;
+  left: 40%;
   width: auto;
-  text-align: right;
+  text-align: center;
 }
 
 #clear {
@@ -43,8 +41,9 @@
   padding: 10px;
   font-size: 20px;
   color: white;
-  top: 30%;
-  right: 5%;
+  top: 10%;
+  left: 40%;
+  right: 13%;
   text-align: center;
 }
 
@@ -79,7 +78,7 @@ h1 {
 }
 
 li {
-  background-color: rgb(128, 26, 0);
+  background-color: rgb(159, 195, 40);
   margin-top: 10px;
   padding: 5px 15px;
   width: 80%;
