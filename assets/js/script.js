@@ -59,7 +59,7 @@ var data = [
 var qindex = 0;
 var score = 0;
 
-/// need to add styling 
+/// 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#start");
 var datadiv = document.querySelector("#datadiv");
@@ -70,7 +70,7 @@ var secondsLeft = 100;
 var holdInterval = 0;
 //adds element when we need it
 var ulWrite = document.createElement("ul");
-var dataIndex = 0;
+
 // timer working , user gets 15 second penalty need to hide it
 // when game is over 
 /// the timer starts when they click the button
@@ -87,7 +87,7 @@ timer.addEventListener("click", function () {
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 alldone();
-                currentTime.textContent = "GAME OVER";
+                currentTime.textContent = "Time has run out !!!";
             }
         }, 1000);
     }
@@ -95,6 +95,8 @@ timer.addEventListener("click", function () {
 });
 ///clearing data here before pulling questions and 
 /// answers from the object
+
+
 function render(qindex) {
     datadiv.innerHTML = "";
     ulWrite.innerHTML = "";
@@ -145,6 +147,9 @@ function compare(event) {
     /// if we are at the end of the questions 
     /// call function all done defined further down
     qindex++;
+
+
+
     if (qindex >= data.length) {
         alldone();
         createDiv.textContent = "Your answered " + score + " out of 10 questions correct !!";
@@ -160,70 +165,72 @@ function compare(event) {
 function alldone() {
     datadiv.innerHTML = "";
     currentTime.innerHTML = "";
-}
-/// header
-var makeh = document.createElement("h1");
-makeh.setAttribute("id", "makeh");
-makeh.textContent = "GAME OVER";
-datadiv.appendChild(makeh);
 
-//
-//
-var makep = document.createElement("p");
-makep.setAttribute("id", "makep");
-datadiv.appendChild(makep);
+    /// header
 
-// add time to score for final score 
 
-if (secondsLeft >= 0) {
-    /// var timeleft = 0;
-    var timeleft = secondsLeft;
-    var makep2 = document.createElement("p");
-    clearInterval(holdInterval);
-    makep.textContent = "Your Final Score Was " + timeleft;
-    datadiv.appendChild(makep2);
+    var makeh = document.createElement("h1");
+    makeh.setAttribute("id", "makeh");
+    makeh.textContent = "GAME OVER";
+    datadiv.appendChild(makeh);
 
-}
-////ask for initials for high score table
-var label = document.createElement("label");
-label.setAttribute("id", "label");
-label.textContent = "Please enter your initials ";
-datadiv.appendChild(label);
-/// get the initials
+    //
+    //
+    var makep = document.createElement("p");
+    makep.setAttribute("id", "makep");
+    datadiv.appendChild(makep);
 
-var input = document.createElement("input");
-input.setAttribute("type", "text");
-input.setAttribute("id", "initials");
-input.textContent = "";
-datadiv.appendChild(input);
+    // add time to score for final score 
 
-/// user submits initials
+    if (secondsLeft >= 0) {
+        /// var timeleft = 0;
+        var timeleft = secondsLeft;
+        var makep2 = document.createElement("p");
+        clearInterval(holdInterval);
+        makep.textContent = "Your Final Score Was " + timeleft;
+        datadiv.appendChild(makep2);
 
-var submit = document.createElement("button");
-submit.setAttribute("type", "submit");
-submit.setAttribute("id", "Submit");
-submit.textContent = "Submit";
-datadiv.appendChild(submit);
-
-submit.addEventListener("click", function () {
-    var initials = input.value;
-    var finalscore = {
-        initials: initials,
-
-        score: timeleft
     }
-    var allscores = localStorage.getItem("allscores");
-    if (allscores === null) {
-        allscores = [];
-    } else {
-        allscores = JSON.parse(allscores);
-    }
-    allscores.push(finalscore);
-    var nextscore = JSON.stringify(allscores);
-    localStorage.setItem("allscores", nextscore);
-    window.location.replace("hiscore.html");
-});
+    ////ask for initials for high score table
+    var label = document.createElement("label");
+    label.setAttribute("id", "label");
+    label.textContent = "Please enter your initials ";
+    datadiv.appendChild(label);
+    /// get the initials
 
+    var input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("id", "initials");
+    input.textContent = "";
+    datadiv.appendChild(input);
+
+    /// user submits initials
+
+    var submit = document.createElement("button");
+    submit.setAttribute("type", "submit");
+    submit.setAttribute("id", "Submit");
+    submit.textContent = "Submit";
+    datadiv.appendChild(submit);
+
+    submit.addEventListener("click", function () {
+        var initials = input.value;
+        var finalscore = {
+            initials: initials,
+
+            score: timeleft
+        }
+        var allscores = localStorage.getItem("allscores");
+        if (allscores === null) {
+            allscores = [];
+        } else {
+            allscores = JSON.parse(allscores);
+        }
+        allscores.push(finalscore);
+        var nextscore = JSON.stringify(allscores);
+        localStorage.setItem("allscores", nextscore);
+        window.location.replace("hiscore.html");
+    });
+}
 
 
 

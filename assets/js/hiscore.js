@@ -23,7 +23,7 @@ if (allscores != null) {
 }
 
 goBack.addEventListener("click", function () {
-    ///evt.preventDefault();
+    preventDefault();
     window.location.replace("index.html");
 });
 
