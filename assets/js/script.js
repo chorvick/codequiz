@@ -46,7 +46,7 @@ var data = [
     {
         ask: "Double quotes and single quotes can be used in JavaScript for identical operations ?",
         answers: ["never", "in a function", "in an array", "always"],
-        rightAnswer: "ans2"
+        rightAnswer: "always"
     },
     {
         ask: "Each line of JavaScript normally ends with a ?",
