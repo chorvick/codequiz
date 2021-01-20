@@ -4,54 +4,54 @@
 //// have to add the real questions in and take test data out 
 var data = [
     {
-        ask: "a  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
+        ask: "Inside which HTML element do we put the JavaScript?",
+        answers: ["<javascripit>", "<script>", "<js>", "<scripting>"],
+        rightAnswer: "<script>"
+    },
+    {
+        ask: "How do you create a function in JavaScript ?",
+        answers: ["function myFunction()", "function = myFunction()", "function: myFunction()", "None of the above"],
+        rightAnswer: "function myFunction()"
+    },
+    {
+        ask: "Which of these means i is greater than five ?",
+        answers: ["i === 5", "i < 5", "i > 5", "i >= 5"],
+        rightAnswer: "i > 5"
+    },
+    {
+        ask: "Which of the following is an example of a boolean ?",
+        answers: ["undefined", "===", "negative", "true"],
+        rightAnswer: "true"
+    },
+    {
+        ask: "How many values can an array hold ?",
+        answers: ["one", "two", "one hundred", "none of the above"],
+        rightAnswer: "none of the above"
+    },
+    {
+        ask: "Using Math.random() returns a random nunber between ?",
+        answers: ["0 to 100", "1 to 100", "0 to 1", "1 to 10"],
+        rightAnswer: "0 to 1"
+    },
+    {
+        ask: "The first element of an array is stored in which position ?",
+        answers: ["1", "0", "as defined", "none of the above"],
+        rightAnswer: "0"
+    },
+    {
+        ask: "In JavaScript console.log(a) prints a to the ?",
+        answers: ["screen", "alert box", "dom", "console"],
+        rightAnswer: "console"
+    },
+    {
+        ask: "Double quotes and single quotes can be used in JavaScript for identical operations ?",
+        answers: ["never", "in a function", "in an array", "always"],
         rightAnswer: "ans2"
     },
     {
-        ask: "b  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "c  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "d  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "e  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "f  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "g  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "h  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "i  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
-    },
-    {
-        ask: "j  question",
-        answers: ["ans1", "ans2", "ans3", "ans4"],
-        rightAnswer: "ans2"
+        ask: "Each line of JavaScript normally ends with a ?",
+        answers: ["curley brace", "colon", "asterik", "semicolon"],
+        rightAnswer: "semicolon"
     },
 ];
 
