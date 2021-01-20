@@ -78,7 +78,7 @@ h1 {
 }
 
 li {
-  background-color: rgb(18, 136, 172);
+  background-color: rgb(41, 165, 202);
   margin-top: 10px;
   padding: 5px 15px;
   width: 80%;
@@ -88,8 +88,10 @@ li {
 
 #createDiv {
   margin-top: 20px;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid rgb(226, 213, 213);
 }
+/**  for larger mobile like iphone 12 **/
+
 @media screen and (max-width: 1080px) {
   #container {
     font-size: 27px;
@@ -97,3 +99,11 @@ li {
     left: 1%;
   }
 }
+/**  for real small phones **/
+
+@media screen and (max-width: 760px) {
+  #container {
+    font-size: 33px;
+    float: left;
+    left: 1%;
+  }
