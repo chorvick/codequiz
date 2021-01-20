@@ -134,12 +134,12 @@ function compare(event) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
 
-        if (element.textContent == data[dataIndex].rightAnswer) {
+        if (element.textContent == data[qindex].rightAnswer) {
             score++;
-            createDiv.textContent = "Good - The answer was " + data[dataIndex].rightAnswer;
+            createDiv.textContent = "Good - The answer was " + data[qindex].rightAnswer;
         } else {
             secondsLeft = secondsLeft - 15;
-            createDiv.textContent = "I'm sorry you missed that one. The answer was " + data[dataIndex].rightAnswer;
+            createDiv.textContent = "I'm sorry you missed that one. The answer was " + data[qindex].rightAnswer;
 
         }
     }
